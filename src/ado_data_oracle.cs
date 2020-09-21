@@ -2182,11 +2182,19 @@ namespace Oracle.ADO
     {
         string app_role_list = "";
 
+        private static string _strFCSConnectionString = "";
         public static string FCSConnectionString
         {
-            get { return "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=LOCALHOST)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));User Id=fcs_biosum;Password=fcs;Pooling=true;Min Pool Size=1;Max Pool Size=5;"; }
+            set { _strFCSConnectionString = value; }
+            get { return _strFCSConnectionString; }
         }
-
+        private static string _strFCSSchema="";
+        public static string FCSSchema
+        {
+            set { _strFCSSchema = value; }
+            get {return _strFCSSchema;}
+        }
+        
         /// <summary>
         /// Ensure the current logged in user is a member of the NOMS application role. 
         /// </summary>

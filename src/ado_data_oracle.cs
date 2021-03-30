@@ -182,6 +182,8 @@ namespace Oracle.ADO
 
         }
 
+
+
         public void SqlQueryReader(string strConn, string strSql)
         {
             this.m_intError = 0;
